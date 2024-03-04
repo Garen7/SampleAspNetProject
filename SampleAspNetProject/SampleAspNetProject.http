@@ -1,0 +1,40 @@
+//@SampleAspNetProject_HostAddress = http://localhost:5006
+@SampleAspNetProject_HostAddress = https://localhost:7290
+
+POST {{SampleAspNetProject_HostAddress}}/api/Orders
+Content-Type: application/json
+Accept-Language: en-US,en;q=0.5
+
+{
+    "id": 1,
+    "customername": "John Doe",
+    "address": "12345 Test Drive",
+    "products": [
+      {
+        "name": "banana",
+        "price": 1.19
+      },
+      {
+        "name": "orange",
+        "price": 1.49
+      }
+    ]
+}
+
+###
+
+POST {{SampleAspNetProject_HostAddress}}/api/Products
+Content-Type: application/json
+Accept-Language: en-US,en;q=0.5
+
+{
+    "name": "apple",
+    "price": 0.99
+}
+
+###
+
+GET {{SampleAspNetProject_HostAddress}}/api/Products
+Accept: application/json
+
+###
